@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard Paziente{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Benvenuto, {{ nome }}!</h2>
+
+    <div class="list-group">
+
+        <a href="/aggiungiprenotazione" class="list-group-item list-group-item-action">
+            ➕ Aggiungi prenotazione
+        </a>
+
+        <a href="" class="list-group-item list-group-item-action">
+            📅 Le mie prenotazioni
+        </a>
+
+        <a href="" class="list-group-item list-group-item-action">
+            📝 Referti disponibili
+        </a>
+        <a href="" class="list-group-item list-group-item-action">
+            💳 Le mie fatture
+        </a>
+        <a href="" class="list-group-item list-group-item-action text-danger">
+            🔓 Logout
+        </a>
+    </div>
+</div>
+{% endblock %}
