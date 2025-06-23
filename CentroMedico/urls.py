@@ -27,6 +27,13 @@ urlpatterns = [
 
     path( 'login_auth', login_auth, name='login_auth'),
 
-    path('aggiungiprenotazione', aggiungi_prenotazione, name='aggiungi_prenotazione')
+    path('aggiungiprenotazione', aggiungi_prenotazione, name='aggiungi_prenotazione'),
+
+    path('dashboard_paziente', dashboard_paziente, name='dashboard_paziente'),
+
+    path('visualizzaprenotazione', visualizza_prenotazione, name='visualizza_prenotazione')
+
+
+
 
 ]

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from CentroMedico.form import PrenotazioneForm
 from CentroMedico.models import *
+from django.contrib import messages
+from django.shortcuts import redirect
 
 
 def home(request):
@@ -65,9 +67,36 @@ def aggiungi_prenotazione(request):
             for esame in esami_selezionati:
                 ListaEsami.objects.create(id_prenotazione=prenotazione, id_esame=esame)
 
-            # Redirect a dashboard o conferma
+            messages.success(request, "Prenotazione effettuata con successo!")
+
             return redirect('dashboard_paziente')
+        else:
+            messages.error(request, "Errore nel form. Controlla i campi.")
     else:
         form = PrenotazioneForm()
 
-    return render(request, 'aggiungi_prenotazione.html', {'form': form})
+    return render(request, 'aggiungi_prenotazioni.html', {'form': form})
+
+
+def dashboard_paziente(request):
+    user_id = request.session.get("user_id")
+    paziente = Paziente.objects.get(id_paziente=user_id)
+    return render(request, 'dashboard_paziente.html', {'nome': paziente.nome})
+
+
+
+def visualizza_prenotazione(request):
+
+    prenotazioni = Prenotazione.objects.all()
+
+    for prenotazione in prenotazioni:
+
+        lista_esami = ListaEsami.objects.filter(id_prenotazione=prenotazione.id_prenotazione)
+        esami = [entry.id_esame for entry in lista_esami]
+        print(esami)
+        print("altrO ID PRENOTAZIONE")
+
+
+
+
+    return render(request, 'visualizza_prenotazione.html', {'esami': lista_esami})

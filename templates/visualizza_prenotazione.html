@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Prenotazioni{% endblock %}
+
+{% block content %}
+
+    {% for esame in esami %}
+        <div>{{ esame.nome_esame }}</div>
+    {% endfor %}
+
+{% endblock %}

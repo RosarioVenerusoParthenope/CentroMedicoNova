@@ -36,12 +36,18 @@ class Esame(models.Model):
     nome_esame = models.CharField(max_length=100)
     costo = models.DecimalField(max_digits=8, decimal_places=2)
 
+    def __str__(self):
+        return self.nome_esame
+
 class Sede(models.Model):
     codice_sede = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=100)
     via = models.CharField(max_length=100)
     città = models.CharField(max_length=100)
     CAP = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.nome
 
 class VisitaMedica(models.Model):
     codice_visita = models.AutoField(primary_key=True)
