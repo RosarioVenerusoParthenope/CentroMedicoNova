@@ -6,8 +6,7 @@
 
 ## ⚙️ Installazione dell’applicazione
 
-<details>
-<summary>🔽 Clona il progetto</summary>
+###🔽 Clona il progetto
 
 ```bash
 git clone https://github.com/RosarioVenerusoParthenope/CentroMedicoNova.git
