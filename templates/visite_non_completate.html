@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Visite da Completare{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Le tue Visite Mediche da Completare</h2>
+
+    {% if visite_da_completare %}
+        <div class="row justify-content-center">
+            {% for item in visite_da_completare %}
+                <div class="col-md-10 mb-4">
+                    <div class="card border-warning shadow-sm">
+                        <div class="card-header bg-warning text-white">
+                            Prenotazione ID {{ item.id_prenotazione.id_prenotazione }} - {{ item.id_prenotazione.data_prenotazione|default:"Data non assegnata" }}
+                        </div>
+
+                        <div class="card-body">
+                            <p><strong>Paziente:</strong> {{ item.id_prenotazione.id_paziente.nome }} {{ item.id_prenotazione.id_paziente.cognome }}</p>
+                            <ul class="list-group">
+                                {% for prestazione in item.prestazioni.all %}
+                                    <li class="list-group-item">
+                                        <strong>Esame:</strong> {{ prestazione.id_esame.nome_esame }}<br>
+                                        <strong>Personale assegnato:</strong>
+                                        <ul>
+                                            {% for pp in prestazione.personale.all %}
+                                                <li>{{ pp.id_personale.nome }} {{ pp.id_personale.cognome }} ({{ pp.id_personale.ruolo }})</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info text-center">
+            Nessuna visita da completare trovata.
+        </div>
+    {% endif %}
+
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-outline-secondary">← Torna alla Home</a>
+    </div>
+</div>
+{% endblock %}

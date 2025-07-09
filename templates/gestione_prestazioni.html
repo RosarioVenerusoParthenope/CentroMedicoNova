@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h2>Gestione Referti</h2>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% for p in prestazioni %}
+<div class="card mb-3 p-3 border">
+    <h4>Esame: {{ p.id_esame.nome_esame }}</h4>
+    <p>Paziente: {{ p.codice_visita.id_prenotazione.id_paziente.nome }} {{ p.codice_visita.id_prenotazione.id_paziente.cognome }}</p>
+    <p>Codice Prenotazione: {{ p.codice_visita.id_prenotazione.id_prenotazione }}</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="prestazione_id" value="{{ p.id_prestazione }}">
+
+        <div class="mb-2">
+            <label>Data referto:</label>
+            <input type="date" name="data_referto" class="form-control" required>
+        </div>
+
+        <div class="mb-2">
+            <label>Testo referto:</label>
+            <textarea name="testo_referto" class="form-control" rows="3" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salva Referto</button>
+    </form>
+</div>
+{% endfor %}
+
+
+    <a href="{% url 'dashboard_personale' %}" class="btn btn-secondary mt-3">Torna alla Dashboard</a>
+</div>
+{% endblock %}

@@ -5,8 +5,9 @@
 {% block content %}
 
 <div class="row justify-content-center mb-5">  <!-- centra la colonna -->
-    <div class="col-md-4"> <!-- 4 colonne su 12: centrato e proporzionato -->
+    <div class="col-md-4"> <!-- 4 colonne su 12: centrato e proporzionato  -login_auth_raw_unsafe-->
         <h2 class="card-title text-center mb-4">Inserisci le credenziali:</h2>
+
         <form action="/login_auth" method="POST">
             {% csrf_token %}
             <div class="mb-3">
@@ -15,7 +16,7 @@
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password:</label>
-                <input type="text" class="form-control" id="password" name="password" required>
+                <input type="password" class="form-control" id="password" name="password" required>
 
             </div>
             <div>

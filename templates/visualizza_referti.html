@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>I tuoi referti</h2>
+
+    {% if referti %}
+        {% for r in referti %}
+            <div class="card my-3 p-3 shadow-sm">
+                <h4>{{ r.id_esame.nome_esame }}</h4>
+                <p><strong>Data prestazione:</strong> {{ r.data_prestazione }}</p>
+                <p><strong>Referto:</strong><br>{{ r.referto }}</p>
+                <p><strong>Codice prenotazione:</strong> {{ r.codice_visita.id_prenotazione.id_prenotazione }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Non ci sono referti disponibili al momento.</p>
+    {% endif %}
+
+    <a href="{% url 'dashboard_paziente' %}" class="btn btn-secondary mt-3">Torna alla Dashboard</a>
+</div>
+{% endblock %}

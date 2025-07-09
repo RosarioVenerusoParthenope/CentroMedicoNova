@@ -5,12 +5,27 @@
 {% block content %}
 <div class="row align-items-center mb-5">
     <div class="col-md-6">
-        <h1 class="display-5">Benvenuto in <strong>Clinica Nova</strong></h1>
-        <p class="lead">Gestisci esami, visite e cartelle cliniche in modo semplice e digitale.</p>
-        <div class="d-grid gap-2 mt-4">
-            <a href="/login" class="btn btn-outline-success-custom btn-lg">Accesso Paziente</a>
-            <a href="" class="btn btn-outline-success-custom btn-lg">Accesso Medico</a>
+    <h1 class="display-5">Benvenuto in <strong>Clinica Nova</strong></h1>
+    <p class="lead">Gestisci esami, visite e cartelle cliniche in modo semplice e digitale.</p>
+
+        <div class="mt-4">
+
+            <div class="card border-success shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Area Pazienti</h5>
+                    <div class="d-grid gap-2 mt-3">
+                        <a href="/login" class="btn btn-outline-success btn-lg">Accesso Paziente</a>
+                        <a href="/registrazione" class="btn btn-outline-primary btn-lg">Registrazione Paziente</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 mt-4">
+                <a href="/login" class="btn btn-outline-success-custom btn-lg">Accesso Medico</a>
+            </div>
+
         </div>
+
     </div>
     <div class="col-md-6">
         {% load static %}
@@ -19,18 +34,40 @@
     </div>
 </div>
 
+
+{% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success text-center">{{ message }}</div>
+        {% endfor %}
+{% endif %}
+
+
+
+{% if logout %}
+
+    <div class="alert alert-success text-center">{{ logout }}</div>
+
+{% endif %}
+
+
+
+
 <hr class="my-5">
 
 <h2 class="text-center mb-4">Cosa puoi fare con Clinica Nova</h2>
 <div class="row text-center g-4">
-
+    <div class="text-center mt-5">
+        <a href="{% url 'visite_non_completate' %}" class="btn btn-outline-warning btn-lg">
+            📋 Vedi Visite da Completare
+        </a>
+    </div>
     <div class="col-md-4">
         <div class="card border-success h-100 shadow-sm">
             <div class="card-body">
                 <h5 class="card-title">Per i Pazienti</h5>
                 <ul class="list-unstyled">
-                    <li>✔️ Prenota o modifica un esame</li>
-                    <li>✔️ Consulta la cartella clinica</li>
+                    <li>✔️ Prenota</li>
+                    <li>✔️ Visualizza prenotazioni</li>
                     <li>✔️ Visualizza i risultati</li>
                     <li>✔️ Ricevi la fattura post-visita</li>
                 </ul>
@@ -43,10 +80,7 @@
             <div class="card-body">
                 <h5 class="card-title">Per i Medici</h5>
                 <ul class="list-unstyled">
-                    <li>✔️ Vedi gli esami da svolgere</li>
-                    <li>✔️ Accedi alle cartelle dei pazienti</li>
                     <li>✔️ Inserisci risultati e allegati</li>
-                    <li>✔️ Consulta le visite svolte</li>
                 </ul>
             </div>
         </div>

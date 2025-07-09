@@ -7,15 +7,11 @@
     <h2 class="mb-4 text-center">Benvenuto, Dott. {{ nome }}!</h2>
 
     <div class="list-group">
-        <a href="{% url 'lista_pazienti' %}" class="list-group-item list-group-item-action">
-            👥 Elenco pazienti
+
+        <a href="/gestioneprestazioni" class="list-group-item list-group-item-action">
+            🩺 Gestione prestazioni
         </a>
-        <a href="{% url 'gestione_prestazioni' %}" class="list-group-item list-group-item-action">
-            🩺 Gestione prestazioni / referti
-        </a>
-        <a href="{% url 'visualizza_visite' %}" class="list-group-item list-group-item-action">
-            📋 Visite mediche
-        </a>
+
         <a href="{% url 'logout' %}" class="list-group-item list-group-item-action text-danger">
             🔓 Logout
         </a>

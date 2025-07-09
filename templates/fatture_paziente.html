@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Fatture disponibili</h2>
+
+{% if fatture %}
+<table border="1">
+  <tr>
+    <th>Data Fattura</th>
+    <th>Intestatario</th>
+    <th>Totale (€)</th>
+    <th>Azioni</th>
+  </tr>
+  {% for f in fatture %}
+  <tr>
+    <td>{{ f.data_emissione }}</td>
+    <td>{{f.id_paziente.nome }} {{f.id_paziente.cognome }}</td>
+    <td>{{ f.importo }}</td>
+    <td>
+      <a href="{% url 'download_fattura_pdf' f.numero_fattura %}">Scarica PDF</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>Non ci sono fatture disponibili.</p>
+{% endif %}
+
+<a href="{% url 'dashboard_paziente' %} " class="btn btn-secondary mt-3">Torna alla Dashboard</a>
+{% endblock %}

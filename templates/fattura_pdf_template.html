@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial; }
+        h2 { border-bottom: 1px solid #000; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #000; padding: 6px; text-align: left; }
+    </style>
+</head>
+<body>
+    <h2>Fattura n.{{ fattura.numero_fattura }}</h2>
+    <p><strong>Intestatario:</strong> {{ fattura.id_paziente.nome }} {{ fattura.id_paziente.cognome }}</p>
+    <p><strong>Data:</strong> {{ fattura.data_emissione}}</p>
+    <p><strong>Totale:</strong> €{{ fattura.importo }}</p>
+
+    <h3>Prestazioni incluse</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Esame</th>
+                <th>Costo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in fattura.codice_visita.id_prenotazione.esami.all %}
+            <tr>
+                <td>{{ p.id_esame.nome_esame }}</td>
+                <td>€{{ p.id_esame.costo }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
