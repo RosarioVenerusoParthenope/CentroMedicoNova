@@ -4,14 +4,14 @@
 
 ---
 
-## ⚙️ Installazione dell’applicazione
+⚙️ Installazione dell’applicazione
 
-##🔽 Clona il progetto
+🔽 Clona il progetto
 
 ```bash
 git clone https://github.com/RosarioVenerusoParthenope/CentroMedicoNova.git
 cd CentroMedicoNova
-
+bash```
 </details> <details> <summary>🧪 (Opzionale) Crea ambiente virtuale</summary>
 
 python -m venv venv
