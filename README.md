@@ -6,7 +6,7 @@
 
 ## ⚙️ Installazione dell’applicazione
 
-###🔽 Clona il progetto
+##🔽 Clona il progetto
 
 ```bash
 git clone https://github.com/RosarioVenerusoParthenope/CentroMedicoNova.git
@@ -31,7 +31,7 @@ python manage.py runserver
 🔗 Apri http://127.0.0.1:8000 nel browser per utilizzare l’app.
 
 
-### 👤 Accesso Paziente
+## 👤 Accesso Paziente
 
 I pazienti possono registrarsi direttamente dalla homepage.
 
@@ -42,7 +42,7 @@ Una volta registrati e loggati, possono:
 - 📄 Consultare i referti (una volta compilati)  
 - 🧾 Scaricare le fatture in PDF  
 
-#### Esami disponibili:
+## Esami disponibili:
 
 - Ecocardiogramma  
 - Elettrocardiogramma  
@@ -54,11 +54,11 @@ Una volta registrati e loggati, possono:
 
 
 
-####🔄 Flusso completo da testare
-####1️⃣ Registrati come paziente
+##🔄 Flusso completo da testare
+##1️⃣ Registrati come paziente
 Vai su “Registrati”, inserisci i dati e accedi con il tuo account.
 
-####2️⃣ Prenota un esame
+##2️⃣ Prenota un esame
 Vai su "Prenota visita"
 
 -Seleziona uno o più esami disponibili
