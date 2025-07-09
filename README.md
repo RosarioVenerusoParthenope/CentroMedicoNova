@@ -2,45 +2,42 @@
 
 [📄 Clicca qui per aprire la documentazione PDF completa](https://github.com/RosarioVenerusoParthenope/CentroMedicoNova/blob/main/Presentazione%20Progetto%20Clinica%20Nova/progetto%20clinica%20nova.pdf)
 
-Clinica Nova è un'applicazione web realizzata in Django per la gestione di una clinica medica. Il progetto ha finalità **didattiche** e punta a simulare il ciclo completo di gestione: dalla prenotazione, all'assegnazione del personale, refertazione, fino alla visualizzazione della fattura.
+**Clinica Nova** è un’app web sviluppata in Django, pensata per simulare la gestione di una clinica: dalla prenotazione di esami alla refertazione, fino alla fatturazione. Il progetto è stato realizzato per fini didattici.
 
 ---
 
-## ⚙️ Installazione
-
-Per eseguire il progetto in locale:
+## ⚙️ Installazione (locale)
 
 ```bash
 git clone https://github.com/RosarioVenerusoParthenope/CentroMedicoNova.git
 cd CentroMedicoNova
 
-# Crea un ambiente virtuale (opzionale ma consigliato)
+# (Facoltativo) Ambiente virtuale
 python -m venv venv
-source venv/bin/activate    # Mac/Linux
-venv\Scripts\activate       # Windows
+source venv/bin/activate       # Linux/macOS
+venv\Scripts\activate          # Windows
 
-# Installa le dipendenze
+# Installazione dipendenze
 pip install -r requirements.txt
 
-# Applica le migrazioni
+# Migrazioni e avvio
 python manage.py migrate
-
-# Avvia il server
 python manage.py runserver
 
 
-👤 Accesso Paziente
-I pazienti possono registrarsi dalla homepage. Una volta registrati e loggati possono:
+📘 Manuale d’uso: come utilizzare l’app
+👤 1. Accesso come Paziente
+Vai su “Registrati” dalla homepage
 
-Prenotare esami
+Inserisci tutti i dati richiesti (nome, cognome, codice fiscale, ecc.)
 
-Visualizzare le proprie prenotazioni
+Dopo la registrazione, effettua l’accesso come paziente
 
-Consultare i referti (una volta compilati)
+🗓️ 2. Prenotazione di esami
+Vai su “Prenota visita”
 
-Scaricare le fatture in PDF
+Seleziona uno o più esami disponibili:
 
-Esami disponibili:
 Ecocardiogramma
 
 Elettrocardiogramma
@@ -55,9 +52,26 @@ Risonanza magnetica
 
 Ecografia addominale
 
-🩺 Accesso Medico
-Per testare la funzionalità dei medici, accedi con una delle seguenti credenziali:
+Inserisci una descrizione (opzionale) e invia la prenotazione
 
+⚠️ La data della visita sarà automaticamente impostata a un giorno successivo per semplicità.
+
+📋 3. Visualizza le tue prenotazioni
+Vai su “Le mie prenotazioni”
+
+Troverai l’elenco delle tue visite prenotate con gli esami relativi
+
+⚠️ Finché gli esami non sono stati refertati, non sarà visibile né il referto né la fattura.
+
+🩺 4. Accesso come Medico per completare il flusso
+🔍 Come sapere quale medico utilizzare?
+Accedi come paziente
+
+Vai su “Visite da effettuare”
+
+Vedrai per ogni esame il medico assegnato automaticamente
+
+🧑‍⚕️ Credenziali di accesso Medici (test):
 Nome	Email	Password	Specializzazione
 Luca	lrossi@clinica.it	luca123	Radiologia
 Elena	eferrari@clinica.it	elena456	Radiologia
@@ -66,29 +80,61 @@ Marco	mconti@clinica.it	marco321	Cardiologia
 Alberto	averdi@clinica.it	alberto654	Pneumologia
 Giulia	ggalli@clinica.it	giulia987	Medicina dello sport
 
-🔄 Come testare il ciclo completo
-Registrati come paziente
+✍️ 5. Scrittura dei referti
+Fai logout come paziente
 
-Fai una prenotazione selezionando uno o più esami
+Accedi come medico assegnato
 
-Vai in “Visite da effettuare” per vedere a quali medici sono stati assegnati gli esami
+Vai su “Gestione prestazioni”
 
-Fai logout, entra con uno dei medici indicati
+Qui vedrai solo gli esami a te assegnati e ancora da refertare
 
-Accedi a “Gestione prestazioni” e compila i referti
+Compila il referto per ogni prestazione e salva
 
-Rientra come paziente per consultare i referti e scaricare la fattura
+💡 Per test più semplici, prova con una sola prestazione. Il sistema è progettato anche per gestirne più in una singola prenotazione.
+
+📄 6. Visualizzazione Referti e Fattura
+Ritorna a loggarti come paziente
+
+Vai su “I miei referti” per consultare i referti degli esami completati
+
+Vai su “Visualizza fattura” per il riepilogo dei costi
+
+Scarica la fattura in PDF per ciascuna visita completata
 
 📌 Note Finali
-⚠️ Il progetto è a scopo didattico, pertanto alcune logiche (es. assegnazione automatica dei medici, date fittizie) sono state semplificate per agevolare la comprensione del flusso.
+⚠️ Il progetto è puramente dimostrativo. Alcune scelte (come l’assegnazione automatica dei medici o le date semplificate) sono state fatte per facilitare la comprensione del flusso.
 
-🛠️ Possibili Estensioni
-Gestione manuale delle assegnazioni da parte di personale amministrativo
+🛠️ Possibili sviluppi futuri
+Assegnazione manuale degli esami da parte di personale amministrativo
 
-Messaggistica tra medico e paziente
+Chat/messaggistica tra medico e paziente
 
-Dashboard migliorata con filtri, ricerca, e modifiche alle prenotazioni
+Modifica o cancellazione prenotazioni
 
-Allegati nei referti (es. immagini)
+Referti con allegati (es. immagini diagnostiche)
 
-Gestione profilo personale
+Dashboard più avanzata con filtri, ricerca, statistiche
+
+Profilo utente con possibilità di modifica dati
+
+👨‍💻 Autore
+Rosario Veneruso
+📧 rosariovenerusoparthenope@gmail.com
+
+markdown
+Copia
+Modifica
+
+---
+
+### ✅ Aggiunta su GitHub
+
+1. Vai sulla tua repo: [https://github.com/RosarioVenerusoParthenope/CentroMedicoNova](https://github.com/RosarioVenerusoParthenope/CentroMedicoNova)
+2. Clicca **“Add file” > “Create new file”**
+3. Inserisci `README.md` come nome del file
+4. Incolla il contenuto qui sopra
+5. Scrivi un messaggio di commit (es. `Aggiunta guida completa all'uso`)
+6. Clicca **“Commit new file”**
+
+Vuoi che ti preparo anche un badge carino per “📘 Documentazione disponibile” o vuoi aggiungere immagini (screenshot)? P
