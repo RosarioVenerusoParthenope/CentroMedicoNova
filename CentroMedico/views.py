@@ -1,23 +1,26 @@
-from django.db.models import Prefetch
-import sqlite3
+from django.db.models import Prefetch         # Usato in: visualizza_prenotazione, visite_non_completate – per ottimizzare query sui related
+import sqlite3                                # Usato in: login_auth_raw_unsafe – per eseguire query raw non sicure (a scopo didattico)
+from django.contrib import messages           # Usato in: login_auth, registrazione, aggiungi_prenotazione, gestione_prestazioni – per messaggi utente
+from django.contrib.auth.hashers import *     # Usato in: registrazione, login_auth – per make_password e check_password
+from django.db.models import Prefetch         # (duplicato, già presente sopra)
+from django.db.models import Sum, Max         # Usato in: visualizza_fatture – per somma costi esami e data referti
+from django.http import HttpResponse          # Usato in: download_fattura_pdf – per restituire il PDF
+from django.shortcuts import redirect         # Usato in: login_auth, logout, registrazione, aggiungi_prenotazione, gestione_prestazioni – per redirect
+from django.shortcuts import render           # Usato in quasi tutte le view – per rendere template HTML
+from django.template.loader import get_template  # Usato in: download_fattura_pdf – per caricare template del PDF
+from xhtml2pdf import pisa                    # Usato in: download_fattura_pdf – per generare PDF da HTML
+from datetime import datetime                 # Usato in: gestione_prestazioni – per validare date
+from django.db.models import Count            # Usato in: aggiungi_prenotazione – per contare prestazioni assegnate ai medici/tecnici
 
-from django.contrib import messages
-from django.contrib.auth.hashers import *
-from django.db.models import Prefetch
-from django.db.models import Sum, Max
-from django.http import HttpResponse
-from django.shortcuts import redirect
-from django.shortcuts import render
-from django.template.loader import get_template
-from xhtml2pdf import pisa
-from datetime import datetime
-from django.db.models import Count
+# Form personalizzati
+from CentroMedico.form import *               # Usato in: registrazione, aggiungi_prenotazione – per i form HTML del paziente
 
-from CentroMedico.form import *
-from CentroMedico.models import *
-from django.shortcuts import render, get_object_or_404
-from django.views.decorators.csrf import csrf_exempt
+# Modelli del progetto
+from CentroMedico.models import *             # Usato in quasi tutte le view – per accedere ai modelli: Paziente, Prenotazione, Prestazione, ecc.
 
+# Utility Django
+from django.shortcuts import render, get_object_or_404  # Usato in: render in molte view, get_object_or_404 è importato ma **non utilizzato**
+from django.views.decorators.csrf import csrf_exempt    # Importato ma **non utilizzato** in nessuna view
 
 
 
