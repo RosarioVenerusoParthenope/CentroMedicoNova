@@ -3,6 +3,26 @@
 [📄 **Clicca qui per aprire la documentazione PDF completa**](https://github.com/RosarioVenerusoParthenope/CentroMedicoNova/blob/main/Presentazione%20Progetto%20Clinica%20Nova/progetto%20clinica%20nova.pdf)
 
 ---
+**Clinica Nova** è un gestionale medico completo sviluppato in Django, pensato per semplificare la gestione di visite specialistiche, referti medici e fatturazione in formato digitale.
+
+L'applicazione consente:
+- ai **pazienti** di registrarsi, prenotare esami, scaricare referti e fatture in PDF,
+- ai **medici** di gestire le prestazioni assegnate e compilare i referti in maniera intuitiva,
+- e agli **amministratori** di avere una gestione centralizzata del centro medico.
+
+> 🎓 Progetto realizzato a scopo didattico per il corso universitario – Università degli Studi di Napoli Parthenope.
+
+
+## 🖼️ Screenshot
+
+### 🔹 Homepage
+![Homepage](screenshots/homepage.png)
+
+### 🔹 Dashboard paziente
+![Dashboard paziente](screenshots/dashboard_paziente.png)
+
+### 🔹 Referti e fattura
+![Referti e fatture](screenshots/referti.png)
 
 ## ⚙️ Installazione dell’applicazione
 
@@ -37,6 +57,22 @@ python manage.py runserver
 ```
 
 🔗 Apri http://127.0.0.1:8000 nel browser per utilizzare l’app.
+
+
+## 🧰 Tecnologie Utilizzate
+Python 3.12
+
+Django 5.2.1
+
+SQLite (DB predefinito)
+
+HTML + CSS (template base)
+
+Bootstrap 5 (via CDN)
+
+ReportLab + xhtml2pdf (per generazione PDF)
+
+Git + GitHub
 
 
 ## 📘 Manuale d’uso – Come usare l’app
@@ -114,3 +150,10 @@ Sarà disponibile anche la fattura scaricabile in PDF
 ## 📌 Note Finali
 ⚠️ Il progetto è a scopo didattico, pertanto alcune logiche (es. assegnazione automatica dei medici, date fittizie) sono state semplificate per agevolare la comprensione del flusso.
 
+---
+
+## 📄 Licenza
+
+Questo progetto è distribuito con [licenza MIT](LICENSE).
+
+Se vuoi contribuire, riutilizzare o distribuire il codice, è necessario mantenere i crediti e rispettare i termini della licenza.

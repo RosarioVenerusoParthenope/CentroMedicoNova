@@ -20,7 +20,7 @@ from CentroMedico.models import *             # Usato in quasi tutte le view –
 
 # Utility Django
 from django.shortcuts import render, get_object_or_404  # Usato in: render in molte view, get_object_or_404 è importato ma **non utilizzato**
-from django.views.decorators.csrf import csrf_exempt    # Importato ma **non utilizzato** in nessuna view
+
 
 
 
