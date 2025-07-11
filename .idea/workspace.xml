@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1d81c491-a970-4bf8-a94b-5d478af678e6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +72,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\royve\PycharmProjects\CentroMedico\screenshots" />
       <recent name="C:\Users\royve\PycharmProjects\CentroMedico\Presentazione Progetto Clinica Nova" />
       <recent name="C:\Users\royve\PycharmProjects\CentroMedico\CentroMedico\static\CentroMedico\img" />
       <recent name="C:\Users\royve\PycharmProjects\CentroMedico\CentroMedico\static\CentroMedico" />
@@ -181,7 +180,7 @@
       <workItem from="1752066676960" duration="9420000" />
       <workItem from="1752133927927" duration="654000" />
       <workItem from="1752188363135" duration="2147000" />
-      <workItem from="1752257902273" duration="1058000" />
+      <workItem from="1752257902273" duration="2411000" />
     </task>
     <servers />
   </component>
